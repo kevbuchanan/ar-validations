@@ -1,0 +1,11 @@
+<form action='/events/create' method='post'>
+  <input type='text' name='event[title]' placeholder='Title' <%="value=#{@event.title}" if @event%>>
+  <span><%=if @event && !@event.errors[:title].empty?; "Title #{@event.errors[:title].join(', ')}"; end%></span><br>
+  <input id='date' type='text' name='event[date]' placeholder='Date' <%="value=#{@event.date}" if @event%>>
+  <span><%=if @event && !@event.errors[:date].empty?; "Date #{@event.errors[:date].join(', ')}"; end%></span><br>
+  <input type='text' name='event[organizer_name]' placeholder='Organizer name' <%="value=#{@event.organizer_name}" if @event%>>
+  <span><%=if @event && !@event.errors[:organizer_name].empty?; "Organizer name #{@event.errors[:organizer_name].join(', ')}"; end%></span><br>
+  <input type='text' name='event[organizer_email]' placeholder='Organizer email' <%="value=#{@event.organizer_email}" if @event%>>
+  <span><%=if @event && !@event.errors[:organizer_email].empty?; "Organizer email #{@event.errors[:organizer_email].join(', ')}"; end%></span><br>
+  <input type='submit' value='Create Event'>
+</form>
